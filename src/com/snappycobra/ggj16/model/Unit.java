@@ -6,6 +6,7 @@ import com.snappycobra.motor.maps.GameObject;
 
 public class Unit extends Resource{
 	private Job job;
+	private int walkSpeed;
 	
 	public Unit(String name, Body body) {
 		super(name, body);
@@ -15,6 +16,10 @@ public class Unit extends Resource{
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public void moveTo(Body destination){
 		
 	}
 
