@@ -6,6 +6,10 @@ import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
+import org.dyn4j.dynamics.Body;
+import org.dyn4j.geometry.AABB;
+import org.dyn4j.geometry.Vector2;
+
 import com.snappycobra.ggj16.model.Base;
 import com.snappycobra.ggj16.model.Building;
 import com.snappycobra.ggj16.model.Cursor;
@@ -82,8 +86,8 @@ public class GodPainter extends AbstractPainter{
 		Map map = this.getMap();
 		List<ResourcePoint> points = new GameObjectGrabber<ResourcePoint>().getObjects(map, ResourcePoint.class);
 		for (ResourcePoint point : points) {
-			int x = (int) (point.getBody().getWorldCenter().x*map.getTileWidth());
-			int y = (int) (point.getBody().getWorldCenter().y*map.getTileHeight());
+			int x = getX(point.getBody());
+			int y = getY(point.getBody());
 			Sprite sprite = point.getResource().getSprite();
 			int width = sprite.getImage().getWidth();
 			int height = sprite.getImage().getHeight();
@@ -96,8 +100,8 @@ public class GodPainter extends AbstractPainter{
 		for (Player player : players) {
 			for (Unit unit : player.getUnitList()) {
 				Sprite sprite = unit.getJob().getSprite();
-				int x = (int) (unit.getBody().getWorldCenter().x*map.getTileWidth());
-				int y = (int) (unit.getBody().getWorldCenter().y*map.getTileHeight());
+				int x = getX(unit.getBody());
+				int y = getY(unit.getBody());
 
 				int width = sprite.getImage().getWidth();
 				int height = sprite.getImage().getHeight();
@@ -106,13 +110,30 @@ public class GodPainter extends AbstractPainter{
 		}
 	}
 	
+	protected int getX(Body body) {
+		return (int) (getLoc(body).x*getMap().getTileWidth());
+	}
+	
+	protected int getY(Body body) {
+		return (int) (getLoc(body).y*getMap().getTileHeight());
+	}
+	
+	protected Vector2 getLoc(Body body) {
+		AABB aabb = body.createAABB();
+		double width = aabb.getWidth();
+		double height = aabb.getHeight();
+		double x= body.getWorldCenter().x-width/2;
+		double y= body.getWorldCenter().y+height/2;
+		return new Vector2(x, y);
+	}
+	
 	protected void drawBuildings(Graphics2D g) {
 		Map map = this.getMap();
 		for (Player player : players) {
 			List<Building> buildings = player.getBuildingList();
 			for (Building building : buildings) {
-				int x = (int) (building.getBody().getWorldCenter().x*map.getTileWidth());
-				int y = (int) (building.getBody().getWorldCenter().y*map.getTileHeight());
+				int x = getX(building.getBody());
+				int y = getY(building.getBody());
 				Sprite sprite = building.getSprite();
 				int width = sprite.getImage().getWidth();
 				int height = sprite.getImage().getHeight();
