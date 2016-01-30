@@ -2,13 +2,9 @@ package com.snappycobra.ggj16;
 
 import java.util.List;
 
-<<<<<<< HEAD
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.geometry.Rectangle;
-
-=======
 import com.snappycobra.ggj16.control.ArrowCursorController;
->>>>>>> 6dc9f86167f55a60eaa0bfedce3cb88a76135b97
 import com.snappycobra.ggj16.control.CursorController;
 import com.snappycobra.ggj16.control.WASDCursorController;
 import com.snappycobra.ggj16.graphics.GodPainter;
