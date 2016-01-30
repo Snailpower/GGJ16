@@ -39,6 +39,7 @@ public class Player{
 		for(Unit unit : unitList) {
 			unit.update();
 		}
+		cursor.update();
 	}
 
 	public void addCursor(Cursor cursor) {

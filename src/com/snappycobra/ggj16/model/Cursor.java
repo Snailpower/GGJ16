@@ -6,6 +6,7 @@ import com.snappycobra.motor.maps.GameObject;
 
 public class Cursor {
 	private double position;
+	private boolean movingLeft, movingRight;
 	private static final double SPEED=0.5;
 	private double mapWidth;
 	private Player owner;
@@ -16,6 +17,8 @@ public class Cursor {
 		this.owner = player;
 		this.worldMap = worldMap;
 		this.mapWidth = mapWidth;
+		this.movingLeft=false;
+		this.movingRight=false;
 		position = mapWidth/2;
 	}
 	
@@ -37,6 +40,14 @@ public class Cursor {
 	public void doClicked(ResourcePoint rp) {
 		if (selectedUnit != null) {
 			selectedUnit.switchJob(new Gatherer(selectedUnit, rp));
+		}
+	}
+	
+	public void update() {
+		if (movingRight) {
+			this.moveRight();
+		} else if (movingLeft) {
+			this.moveLeft();
 		}
 	}
 	
@@ -76,4 +87,21 @@ public class Cursor {
 	public double getPosition() {
 		return position;
 	}
+
+	public boolean isMovingLeft() {
+		return movingLeft;
+	}
+
+	public void setMovingLeft(boolean movingLeft) {
+		this.movingLeft = movingLeft;
+	}
+
+	public boolean isMovingRight() {
+		return movingRight;
+	}
+
+	public void setMovingRight(boolean movingRight) {
+		this.movingRight = movingRight;
+	}
+	
 }

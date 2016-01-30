@@ -48,6 +48,10 @@ public class Unit extends GameObject{
 		job = null;
 	}
 	
+	public Job getJob() {
+		return job;
+	}
+	
 	public Base getBase() {
 		return base;
 	}
