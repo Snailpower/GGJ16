@@ -10,11 +10,12 @@ public class Cursor {
 		position = mapWidth/2;
 	}
 	
-	public void moveRigth() {
+	public void moveRight() {
 		moveCursor(movementSpeed);
 	}
 	
 	public void moveLeft() {
+		System.out.println("LEFT:"+this.position);
 		moveCursor(-movementSpeed);
 	}
 	

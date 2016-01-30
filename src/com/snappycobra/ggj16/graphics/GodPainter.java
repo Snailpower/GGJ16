@@ -64,6 +64,7 @@ public class GodPainter extends AbstractPainter{
 		for (Player player : players) {
 			Cursor cursor = player.getCursor();
 			int posX = (int) (cursor.getPosition()*getMap().getTileWidth());
+			System.out.println("jooo"+posX);
 			this.drawTiled(g, air, i*(sHeight/numPlayers));
 			//g.drawImage(air, 0, i*(sHeight/numPlayers), (int)(air.getWidth()*scaledY), (int)(air.getHeight()*scaledY), null);
 			this.drawParralax(g, posX/2, i*(sHeight/numPlayers));
