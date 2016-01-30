@@ -7,11 +7,13 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 
 import com.snappycobra.ggj16.model.GodGame;
+import com.snappycobra.ggj16.model.ResourcePoint;
 import com.snappycobra.motor.graphics.AbstractPainter;
 import com.snappycobra.motor.graphics.Frame;
 import com.snappycobra.motor.graphics.ImageManager;
 import com.snappycobra.motor.graphics.Sprite;
 import com.snappycobra.motor.maps.GameObject;
+import com.snappycobra.motor.maps.GameObjectGrabber;
 import com.snappycobra.motor.maps.Map;
 import com.snappycobra.motor.maps.MapContainer;
 import com.snappycobra.motor.timing.Timer;
@@ -49,13 +51,29 @@ public class GodPainter extends AbstractPainter{
 		scroll2 -= Timer.getPassedTime()/Math.pow(10, 7);
 		g.drawImage(air, 0, 0, (int)(air.getWidth()), (int)(air.getHeight()), null);
 		float scaledY = sHeight/2f/mapHeight;
-		g.drawImage(scrap1, 0, 0, (int)(scrap1.getWidth()*scaledY), (int)(scrap1.getHeight()*scaledY), null);
+		this.drawParralax(g, scroll1/2, 0);
 		this.drawLoopMap(g, scroll1, 0);
+		this.drawParralax(g, scroll2/2, sHeight/2);
 		this.drawLoopMap(g, scroll2, sHeight/2);
+		this.drawResources(g);
 	}
 	
-	protected void drawParralax(Graphics2D g) {
-		
+	protected void drawResources(Graphics2D g) {
+		Map map = this.getMap();
+		List<ResourcePoint> resources = new GameObjectGrabber<ResourcePoint>().getObjects(map, ResourcePoint.class);
+		System.out.println("size:"+resources.size());
+		for (ResourcePoint resource : resources) {
+			int x = (int) (resource.getBody().getWorldCenter().x*map.getTileWidth());
+			int y = (int) (resource.getBody().getWorldCenter().y*map.getTileHeight());
+			System.out.println(x+","+y);
+			this.drawSprite(g,resource.getResource().getSprite(), x, y);
+		}
+	}
+	
+	protected void drawParralax(Graphics2D g, int offX, int offY) {
+		int sHeight = this.getHeight();
+		float scaledY = sHeight/2f/mapHeight;
+		g.drawImage(scrap1, offX, offY, (int)(scrap1.getWidth()*scaledY), (int)(scrap1.getHeight()*scaledY), null);
 	}
 	
 	protected void drawLoopMap(Graphics2D g, int offX, int offY){
