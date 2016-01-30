@@ -15,12 +15,10 @@ import com.snappycobra.motor.gui.Window;
 public class Main {
 	public static void main(String[] args){
 		GameModel model = new GameModel(2);
-		GodPainter painter = new GodPainter(new GameModel(2));
+		GodPainter painter = new GodPainter(model);
 		Window window = new Window(300,300,painter);
-		List<Player> player = model.getPlayerList();
-		Cursor cursor1 = player.get(0).getCursor();
-		Cursor cursor2 = player.get(1).getCursor();
-		CursorController controller = new CursorController(cursor1, cursor2);
+		List<Player> players = model.getPlayerList();
+		CursorController controller = new CursorController(players.get(0).getCursor(), players.get(1).getCursor());
 		window.addKeyListener(controller);
 		window.addKeyListener(new WindowCloseController());
 		window.setResizable(true);

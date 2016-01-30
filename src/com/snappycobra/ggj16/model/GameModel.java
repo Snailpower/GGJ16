@@ -22,6 +22,7 @@ public class GameModel extends Game {
 	}
 	
 	private void addPlayers(int amountPlayers, Map map) {
+		System.out.println("am:"+amountPlayers);
 		for (int i=0; i<amountPlayers; i++) {
 			playerList.add(new Player(i,map, new Cursor(map.getWidth())));
 		}

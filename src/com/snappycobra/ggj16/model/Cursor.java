@@ -2,7 +2,7 @@ package com.snappycobra.ggj16.model;
 
 public class Cursor {
 	private double position;
-	private double movementSpeed=1;
+	private static final double SPEED=0.5;
 	private double mapWidth;
 	
 	public Cursor(double mapWidth) {
@@ -11,16 +11,15 @@ public class Cursor {
 	}
 	
 	public void moveRight() {
-		moveCursor(movementSpeed);
+		moveCursor(-SPEED);
 	}
 	
 	public void moveLeft() {
-		System.out.println("LEFT:"+this.position);
-		moveCursor(-movementSpeed);
+		moveCursor(SPEED);
 	}
 	
-	public void moveCursor(double movementSpeed2) {
-		position = (position+movementSpeed)%mapWidth;
+	public void moveCursor(double speed) {
+		position = (position+speed)%mapWidth;
 	}
 
 	public double getPosition() {
