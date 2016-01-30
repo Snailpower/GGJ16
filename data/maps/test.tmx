@@ -43,12 +43,12 @@
   </object>
   <object name="Building" type="com.snappycobra.ggj16.model.Base" x="1379" y="540" width="224" height="232">
    <properties>
-    <property name="Player" value="1"/>
+    <property name="Player" value="0"/>
    </properties>
   </object>
   <object name="Building" type="com.snappycobra.ggj16.model.Base" x="2288" y="546" width="224" height="232">
    <properties>
-    <property name="Player" value="2"/>
+    <property name="Player" value="1"/>
    </properties>
   </object>
  </objectgroup>
