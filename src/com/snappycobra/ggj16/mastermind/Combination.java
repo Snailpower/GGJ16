@@ -12,7 +12,6 @@ import com.snappycobra.ggj16.model.Uranium;
 
 public class Combination {
 	private List<Resource> resourceList = new ArrayList<>();
-	private List<Resource> checkResourceList = new ArrayList<>();
 	private int length;
 	
 	public Combination(int length) {
@@ -34,8 +33,9 @@ public class Combination {
 		int posCol = 0;
 		int col = 0;
 		for(int i=0; i<length; i++){
-			if(checkResourceList.get(i).getResName().equals(solution.getResourceList().get(i))){
+			if(testSolution.get(i).getResName().equals(resourceList.get(i))){
 				testSolution.set(i, null);
+				resourceList.set(i, null);
 				posCol++;
 			}
 		}
@@ -43,8 +43,8 @@ public class Combination {
 		
 		for(int i=0; i<length; i++){
 			for(int j=0; j<length; j++){
-				if(checkResourceList != null && testSolution != null){
-					if(checkResourceList.get(i).getResName().equals(testSolution.get(j))){
+				if(resourceList != null && testSolution != null){
+					if(testSolution.get(i).getResName().equals(resourceList.get(j))){
 						testSolution.set(i, null);
 						col++;
 						break;
@@ -68,7 +68,6 @@ public class Combination {
 	
 	public void addResource(Resource res) {
 		resourceList.add(res);
-		checkResourceList.add(res);
 	}
 	
 	public static Combination generateSolution(int length) {
@@ -95,6 +94,10 @@ public class Combination {
 	
 	public List<Resource> getResourceList() {
 		return resourceList;
+	}
+
+	public boolean isFull() {
+		return resourceList.size() == length;
 	}
 }
 
