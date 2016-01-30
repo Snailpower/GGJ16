@@ -25,8 +25,8 @@ public class GameModel extends Game {
 		addPlayers(amountPlayers, map, worldMap);
 		
 		Body unitBody = new Body();
-		unitBody.shift(new Vector2(20,30));
-		unitBody.addFixture(new Rectangle(30,30));
+		unitBody.shift(new Vector2(5,18));
+		unitBody.addFixture(new Rectangle(3,3));
 		Unit unit = new Unit("harry",unitBody,playerList.get(1));
 		unit.addJob(new JobLess());
 		playerList.get(1).addUnit(unit);

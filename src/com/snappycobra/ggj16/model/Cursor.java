@@ -49,6 +49,7 @@ public class Cursor {
 		} else if (movingLeft) {
 			this.moveLeft();
 		}
+		System.out.println(position);
 	}
 	
 	public void moveRight() {
