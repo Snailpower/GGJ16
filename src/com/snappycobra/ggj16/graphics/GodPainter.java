@@ -48,8 +48,14 @@ public class GodPainter extends AbstractPainter{
 		scroll1 += Timer.getPassedTime()/Math.pow(10, 7);
 		scroll2 -= Timer.getPassedTime()/Math.pow(10, 7);
 		g.drawImage(air, 0, 0, (int)(air.getWidth()), (int)(air.getHeight()), null);
+		float scaledY = sHeight/2f/mapHeight;
+		g.drawImage(scrap1, 0, 0, (int)(scrap1.getWidth()*scaledY), (int)(scrap1.getHeight()*scaledY), null);
 		this.drawLoopMap(g, scroll1, 0);
 		this.drawLoopMap(g, scroll2, sHeight/2);
+	}
+	
+	protected void drawParralax(Graphics2D g) {
+		
 	}
 	
 	protected void drawLoopMap(Graphics2D g, int offX, int offY){
@@ -57,8 +63,8 @@ public class GodPainter extends AbstractPainter{
 		int sHeight = this.getHeight();
 		float scaledY = sHeight/2f/mapHeight;
 		int scaledWidth =  (int) (mapWidth*scaledY);
-		//g.drawImage(scrap1, 0, 0, null);
 		//g.drawImage(scrap2, 100, 0, null);
+		//float scaledY = sHeight/2f/mapHeight;
 		this.drawMap(g, offX%(scaledWidth)+scaledWidth, offY);
 		this.drawMap(g, offX%(scaledWidth), offY);
 		this.drawMap(g, offX%(scaledWidth)-scaledWidth, offY);
