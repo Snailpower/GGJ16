@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.snappycobra.ggj16.model.Base;
 import com.snappycobra.ggj16.model.Building;
+import com.snappycobra.ggj16.model.GameModel;
 import com.snappycobra.ggj16.model.GodGame;
 import com.snappycobra.ggj16.model.Resource;
 import com.snappycobra.ggj16.model.ResourcePoint;
@@ -27,8 +28,8 @@ public class GodPainter extends AbstractPainter{
 	private BufferedImage air, path, foreground, scrap1, scrap2;
 	private int scroll1, scroll2;
 	
-	public GodPainter(GodGame godGame) {
-		super(godGame);
+	public GodPainter(GameModel gameModel) {
+		super(gameModel);
 		Map map = getMap();
 		this.mapWidth = map.getWidth()*map.getTileWidth();
 		this.mapHeight = map.getHeight()*map.getTileHeight();
