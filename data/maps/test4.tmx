@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="240" height="33" tilewidth="32" tileheight="32" nextobjectid="12">
- <objectgroup name="Object Layer 1">
-  <object id="1" name="Uranium2" type="com.snappycobra.ggj16.model.Uranium" x="6720" y="817.99" width="80" height="76.2599">
+<map version="1.0" orientation="orthogonal" width="240" height="33" tilewidth="32" tileheight="32">
+ <objectgroup name="Object Layer 1" width="0" height="0">
+  <object name="Uranium2" type="com.snappycobra.ggj16.model.ResourcePoint" x="6720" y="728" width="87" height="84">
    <properties>
-    <property name="resource" value=""/>
+    <property name="resource" value="Uranium"/>
    </properties>
   </object>
-  <object id="2" name="Silver2" type="com.snappycobra.ggj16.model.Silver" x="5920" y="817.99" width="80" height="76.2599">
+  <object name="Silver2" type="com.snappycobra.ggj16.model.ResourcePoint" x="5920" y="728" width="80" height="80">
    <properties>
-    <property name="resource" value=""/>
+    <property name="resource" value="Silver"/>
    </properties>
   </object>
-  <object id="3" name="Silver1" type="com.snappycobra.ggj16.model.Silver" x="0" y="817.99" width="80" height="76.2599">
+  <object name="Silver1" type="com.snappycobra.ggj16.model.ResourcePoint" x="203" y="725" width="91" height="87">
    <properties>
-    <property name="resource" value=""/>
+    <property name="resource" value="Silver"/>
    </properties>
   </object>
-  <object id="4" name="Oil2" type="com.snappycobra.ggj16.model.Oil" x="5200" y="817.99" width="80" height="76.2599">
+  <object name="Oil2" type="com.snappycobra.ggj16.model.ResourcePoint" x="5200" y="728" width="79" height="77">
    <properties>
-    <property name="resource" value=""/>
+    <property name="resource" value="Oil"/>
    </properties>
   </object>
-  <object id="5" name="Shrine" type="com.snappycobra.ggj16.model.Shrine" x="3680" y="817.99" width="80" height="76.2599">
+  <object name="Shrine" type="com.snappycobra.ggj16.model.Shrine" x="3680" y="728" width="89" height="91">
    <properties>
     <property name="shrine" value=""/>
    </properties>
   </object>
-  <object id="6" name="Base1" type="com.snappycobra.ggj16.model.Base" x="2920" y="817.99" width="160" height="73">
+  <object name="Base1" type="com.snappycobra.ggj16.model.Base" x="2920" y="728" width="160" height="73">
    <properties>
-    <property name="base" value=""/>
+    <property name="Player" value="0"/>
    </properties>
   </object>
-  <object id="7" name="Uranium1" type="com.snappycobra.ggj16.model.Uranium" x="720" y="817.99" width="80" height="76.2599">
+  <object name="Uranium1" type="com.snappycobra.ggj16.model.ResourcePoint" x="720" y="728" width="83" height="84">
    <properties>
-    <property name="resource" value=""/>
+    <property name="resource" value="Uranium"/>
    </properties>
   </object>
-  <object id="8" name="Gear1" type="com.snappycobra.ggj16.model.Gear" x="1440" y="817.99" width="80" height="76.2599">
+  <object name="Gear1" type="com.snappycobra.ggj16.model.ResourcePoint" x="1440" y="728" width="80" height="89">
    <properties>
-    <property name="resource" value=""/>
+    <property name="resource" value="Gear"/>
    </properties>
   </object>
-  <object id="9" name="Base2" type="com.snappycobra.ggj16.model.Base" x="4440" y="817.99" width="160" height="73">
+  <object name="Base2" type="com.snappycobra.ggj16.model.Base" x="4440" y="728" width="160" height="73">
    <properties>
-    <property name="base" value=""/>
+    <property name="Player" value="1"/>
    </properties>
   </object>
-  <object id="10" name="Gear2" type="com.snappycobra.ggj16.model.Gear" x="7600" y="817.99" width="80" height="76.2599">
+  <object name="Gear2" type="com.snappycobra.ggj16.model.ResourcePoint" x="7472" y="731" width="87" height="83">
    <properties>
-    <property name="resource" value=""/>
+    <property name="resource" value="Gear"/>
    </properties>
   </object>
-  <object id="11" name="Oil1" type="com.snappycobra.ggj16.model.Oil" x="2160" y="817.99" width="80" height="76.2599">
+  <object name="Oil1" type="com.snappycobra.ggj16.model.ResourcePoint" x="2160" y="728" width="80" height="92">
    <properties>
-    <property name="resource" value=""/>
+    <property name="resource" value="Oil"/>
    </properties>
   </object>
  </objectgroup>
