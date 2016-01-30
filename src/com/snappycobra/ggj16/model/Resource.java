@@ -2,19 +2,37 @@ package com.snappycobra.ggj16.model;
 
 import org.dyn4j.dynamics.Body;
 
+import com.snappycobra.motor.graphics.Sprite;
 import com.snappycobra.motor.maps.GameObject;
 
-public class Resource extends GameObject{
-
-	public Resource(String name, Body body) {
-		super(name, body);
-		// TODO Auto-generated constructor stub
+public abstract class Resource{
+	protected Sprite sprite;
+	
+	public static Resource getResource(String resName) {
+		switch (resName) {
+		case "Oil":
+			return new Oil();
+			
+		case "Gear":
+			return new Gear();
+			
+		case "Uranium":
+			return new Uranium();
+			
+		case "Silver":
+			return new Silverfish();
+		default:
+			System.out.println("Not recognized:"+resName);
+			break;
+		}
+		return null;
 	}
-
-	@Override
-	public void init() {
-		// TODO Auto-generated method stub
-		
+	
+	public static String getResName(){
+		return "MAG NIET";
 	}
-
+	
+	public Sprite getSprite() {
+		return this.sprite;
+	}
 }

@@ -1,51 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="16" tileheight="16">
- <tileset firstgid="1" name="texture" tilewidth="16" tileheight="16">
-  <image source="texture.png" width="150" height="150"/>
- </tileset>
- <layer name="Tile Layer 1" width="30" height="20">
-  <data encoding="base64">
-   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAgAAAAMAAAAEAAAABQAAAAYAAAAHAAAACAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAACwAAAAwAAAANAAAADgAAAA8AAAAQAAAAEQAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAAAAFAAAABUAAAAWAAAAFwAAABgAAAAZAAAAGgAAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAHQAAAB4AAAAfAAAAIAAAACEAAAAiAAAAIwAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlAAAAJgAAACcAAAAoAAAAKQAAACoAAAArAAAALAAAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuAAAALwAAADAAAAAxAAAAMgAAADMAAAA0AAAANQAAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3AAAAOAAAADkAAAA6AAAAOwAAADwAAAA9AAAAPgAAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQQAAAEIAAABDAAAARAAAAEUAAABGAAAARwAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABJAAAASgAAAEsAAABMAAAATQAAAE4AAABPAAAAUAAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  </data>
- </layer>
- <objectgroup name="Objects" width="30" height="20">
-  <object type="com.snappycobra.motor.demo.Rotator" x="192" y="150">
+<map version="1.0" orientation="orthogonal" width="20" height="10" tilewidth="16" tileheight="16">
+ <objectgroup name="Objects" width="20" height="10">
+  <object type="com.snappycobra.motor.demo.Rotator" x="128" y="70">
    <polyline points="-5,-9 -7,-13 -1,-19 -7,-27 -14,-20 -20,-25 -17,-34 -28,-36 -30,-27 -37,-28 -37,-37 -48,-37 -48,-28 -53,-27 -57,-35 -66,-31 -61,-23 -67,-19 -73,-24 -77,-19 -72,-14 -74,-9 -81,-10 -83,-1 -75,0 -75,9 -82,11 -79,20 -72,18 -69,23 -75,27 -69,35 -63,31 -57,37 -59,43 -50,47 -47,40 -41,41 -41,48 -32,48 -33,41 -28,40 -24,48 -17,45 -20,38 -15,36 -10,41 -5,35 -11,31 -7,26 -1,29 5,18 -2,14 0,6 8,4 6,-7 -2,-3 -4,-7"/>
   </object>
-  <object type="com.snappycobra.motor.demo.Dummy" x="130" y="139" width="20" height="9"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="164" y="145" width="12" height="13"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="134" y="163" width="12" height="13"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="152" y="164" width="17" height="16"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="155" y="127" width="9" height="9"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="326" y="140" width="12" height="13"/>
-  <object type="com.snappycobra.motor.demo.Rotator" x="355" y="149">
+  <object type="com.snappycobra.motor.demo.Dummy" x="66" y="59" width="20" height="9"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="100" y="65" width="12" height="13"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="70" y="83" width="12" height="13"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="88" y="84" width="17" height="16"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="91" y="47" width="9" height="9"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="262" y="60" width="12" height="13"/>
+  <object type="com.snappycobra.motor.demo.Rotator" x="291" y="69">
    <polyline points="-5,-9 -7,-13 -1,-19 -7,-27 -14,-20 -20,-25 -17,-34 -28,-36 -30,-27 -37,-28 -37,-37 -48,-37 -48,-28 -53,-27 -57,-35 -66,-31 -61,-23 -67,-19 -73,-24 -77,-19 -72,-14 -74,-9 -81,-10 -83,-1 -75,0 -75,9 -82,11 -79,20 -72,18 -69,23 -75,27 -69,35 -63,31 -57,37 -59,43 -50,47 -47,40 -41,41 -41,48 -32,48 -33,41 -28,40 -24,48 -17,45 -20,38 -15,36 -10,41 -5,35 -11,31 -7,26 -1,29 5,18 -2,14 0,6 8,4 6,-7 -2,-3 -4,-7"/>
   </object>
-  <object type="com.snappycobra.motor.demo.Dummy" x="318" y="126" width="9" height="9"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="293" y="139" width="27" height="7"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="329" y="157" width="5" height="19"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="293" y="153" width="5" height="6"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="298" y="169" width="5" height="6"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="301" y="160" width="5" height="6"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="306" y="176" width="5" height="6"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="307" y="152" width="5" height="6"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="312" y="167" width="5" height="6"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="320" y="174" width="5" height="6"/>
-  <object type="com.snappycobra.motor.demo.Dummy" x="315" y="159" width="5" height="6"/>
-  <object type="com.snappycobra.motor.demo.Rotator" x="229" y="66">
-   <polygon points="0,0 -30,36 0,50 25,22 27,-2"/>
-  </object>
-  <object type="com.snappycobra.motor.demo.Rotator" x="143" y="64">
-   <polygon points="0,0 -21,15 -8,38 15,24"/>
-  </object>
-  <object type="com.snappycobra.motor.demo.Rotator" x="326" y="-41">
-   <polygon points="-21,80 -31,90 -39,100 -34,125 -1,135 43,114 42,69 1,60"/>
-  </object>
-  <object type="com.snappycobra.motor.demo.Rotator" x="251" y="25">
-   <polygon points="0,0 -1,20 -16,33 -31,4"/>
-  </object>
-  <object type="com.snappycobra.motor.demo.Rotator" x="212" y="216" width="74" height="72">
-   <ellipse/>
-  </object>
+  <object type="com.snappycobra.motor.demo.Dummy" x="254" y="46" width="9" height="9"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="229" y="59" width="27" height="7"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="265" y="77" width="5" height="19"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="229" y="73" width="5" height="6"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="234" y="89" width="5" height="6"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="237" y="80" width="5" height="6"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="242" y="96" width="5" height="6"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="243" y="72" width="5" height="6"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="248" y="87" width="5" height="6"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="256" y="94" width="5" height="6"/>
+  <object type="com.snappycobra.motor.demo.Dummy" x="251" y="79" width="5" height="6"/>
  </objectgroup>
 </map>
