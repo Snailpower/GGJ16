@@ -6,15 +6,18 @@ import java.util.List;
 import org.dyn4j.dynamics.Body;
 
 import com.snappycobra.motor.maps.GameObject;
+import com.snappycobra.motor.maps.GameObjectGrabber;
+import com.snappycobra.motor.maps.Map;
 
-public class Player extends GameObject{
+public class Player{
 	private List<Unit> unitList = new ArrayList<Unit>();
 	private List<Building> buildingList = new ArrayList<Building>();
 	private List<ResourceAmount> resourceList = new ArrayList<ResourceAmount>();
+	private Cursor cursor;
 	
-	public Player(String name, Body body) {
-		super(name, body);
-		// TODO Auto-generated constructor stub
+	public Player(int playerNumber, Map map, Cursor cursor) {
+		this.cursor = cursor;
+		fillBuildingList(playerNumber, map);
 	}
 	
 	public void addResource(String resName, int amount) {
@@ -24,10 +27,13 @@ public class Player extends GameObject{
 			}
 		}
 	}
-
-	@Override
-	public void init() {
-		resourceList.add(new ResourceAmount(Oil.getResName()));
+	
+	public void fillBuildingList(int playerNumber, Map map) {
+		for(Building building : new GameObjectGrabber<Building>().getObjects(map, Base.class)) {
+			if (building.getPropertySet().getProperty("Player").equals(Integer.toString(playerNumber))) {
+				buildingList.add(building);
+			}
+		}
 	}
 	
 	public void update() {
