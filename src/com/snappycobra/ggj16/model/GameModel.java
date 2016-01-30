@@ -18,12 +18,14 @@ public class GameModel extends Game {
 		this.setMap(map);
 		
 		worldMap = new WorldMap(map.getGameObjectsWithProp("Resource"));
-		addPlayers(amountPlayers, map);
+		addPlayers(amountPlayers, map, worldMap);
 	}
 	
-	private void addPlayers(int amountPlayers, Map map) {
+	private void addPlayers(int amountPlayers, Map map, WorldMap worldMap) {
 		for (int i=0; i<amountPlayers; i++) {
-			playerList.add(new Player(i,map, new Cursor(map.getWidth())));
+			Player player = new Player(i,map);
+			player.addCursor(new Cursor(map.getWidth(),player, worldMap));
+			playerList.add(player);
 		}
 	}
 	
@@ -33,5 +35,5 @@ public class GameModel extends Game {
 			player.update();
 		}
 	}	
-
+	
 }
