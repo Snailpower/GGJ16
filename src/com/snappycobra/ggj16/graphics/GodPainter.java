@@ -53,6 +53,7 @@ public class GodPainter extends AbstractPainter{
 		bufferMap();
 		scroll2 += 10;
 		this.drawScreens(g);
+		g.setColor(new Color(1,1,1));
 	}
 	
 	protected void drawScreens(Graphics2D g) {
@@ -73,6 +74,8 @@ public class GodPainter extends AbstractPainter{
 			this.drawLoopMap(g, posX, i*(sHeight/numPlayers));
 			i++;
 		}
+		g.setColor(Color.BLACK);
+		g.drawLine(sWidth/2, sHeight, sWidth/2, 0);
 	}
 	
 	protected void drawResources(Graphics2D g) {
@@ -95,6 +98,7 @@ public class GodPainter extends AbstractPainter{
 				Sprite sprite = unit.getJob().getSprite();
 				int x = (int) (unit.getBody().getWorldCenter().x*map.getTileWidth());
 				int y = (int) (unit.getBody().getWorldCenter().y*map.getTileHeight());
+
 				int width = sprite.getImage().getWidth();
 				int height = sprite.getImage().getHeight();
 				this.drawSprite(g, sprite, x-width/2, y-height);
