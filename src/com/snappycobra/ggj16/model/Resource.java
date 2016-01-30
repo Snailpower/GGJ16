@@ -2,9 +2,11 @@ package com.snappycobra.ggj16.model;
 
 import org.dyn4j.dynamics.Body;
 
+import com.snappycobra.motor.graphics.Sprite;
 import com.snappycobra.motor.maps.GameObject;
 
 public abstract class Resource{
+	protected Sprite sprite;
 	
 	public static Resource getResource(String resName) {
 		switch (resName) {
@@ -16,5 +18,9 @@ public abstract class Resource{
 	
 	public static String getResName(){
 		return "MAG NIET";
+	}
+	
+	public Sprite getSprite() {
+		return this.sprite;
 	}
 }

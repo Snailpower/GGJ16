@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="120" height="33" tilewidth="32" tileheight="32">
+ <objectgroup name="Object Layer 1" width="0" height="0">
+  <object name="Oil1" type="com.snappycobra.ggj16.model.ResourcePoint" x="1080" y="780" width="85" height="23">
+   <properties>
+    <property name="resource" value="Oil"/>
+   </properties>
+  </object>
+  <object name="Oil2" type="com.snappycobra.ggj16.model.ResourcePoint" x="2760" y="780" width="84" height="25">
+   <properties>
+    <property name="resource" value="Oil"/>
+   </properties>
+  </object>
+  <object name="Gear1" type="com.snappycobra.ggj16.model.ResourcePoint" x="720" y="780" width="84" height="27">
+   <properties>
+    <property name="resource" value="Gear"/>
+   </properties>
+  </object>
+  <object name="Gear2" type="com.snappycobra.ggj16.model.ResourcePoint" x="3120" y="780" width="81" height="20">
+   <properties>
+    <property name="resource" value="Gear"/>
+   </properties>
+  </object>
+  <object name="Uranium2" type="com.snappycobra.ggj16.model.ResourcePoint" x="3480" y="780" width="89" height="28">
+   <properties>
+    <property name="resource" value="Uranium"/>
+   </properties>
+  </object>
+  <object name="Uranium1" type="com.snappycobra.ggj16.model.ResourcePoint" x="360" y="780" width="84" height="31">
+   <properties>
+    <property name="resource" value="Uranium"/>
+   </properties>
+  </object>
+  <object name="Silver2" type="com.snappycobra.ggj16.model.ResourcePoint" x="3760" y="780" width="84" height="21">
+   <properties>
+    <property name="resource" value="Silver"/>
+   </properties>
+  </object>
+  <object name="Silver1" type="com.snappycobra.ggj16.model.ResourcePoint" x="0" y="780" width="84" height="23">
+   <properties>
+    <property name="resource" value="Silver"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
