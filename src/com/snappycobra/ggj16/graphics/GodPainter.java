@@ -6,6 +6,8 @@ import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
+import com.snappycobra.ggj16.model.Base;
+import com.snappycobra.ggj16.model.Building;
 import com.snappycobra.ggj16.model.GodGame;
 import com.snappycobra.ggj16.model.Resource;
 import com.snappycobra.ggj16.model.ResourcePoint;
@@ -56,7 +58,6 @@ public class GodPainter extends AbstractPainter{
 		this.drawLoopMap(g, scroll1, 0);
 		this.drawParralax(g, scroll2/2, sHeight/2);
 		this.drawLoopMap(g, scroll2, sHeight/2);
-		this.drawResources(g);
 	}
 	
 	protected void drawResources(Graphics2D g) {
@@ -65,17 +66,25 @@ public class GodPainter extends AbstractPainter{
 		for (ResourcePoint point : points) {
 			int x = (int) (point.getBody().getWorldCenter().x*map.getTileWidth());
 			int y = (int) (point.getBody().getWorldCenter().y*map.getTileHeight());
-			System.out.println(x+","+y);
-			Resource res = point.getResource();
-			res.toString();
 			this.drawSprite(g,point.getResource().getSprite(), x, y);
+		}
+	}
+	
+	protected void drawBuildings(Graphics2D g) {
+		Map map = this.getMap();
+		List<Base> buildings = new GameObjectGrabber<Base>().getObjects(map, Base.class);
+		for (Building building : buildings) {
+			int x = (int) (building.getBody().getWorldCenter().x*map.getTileWidth());
+			int y = (int) (building.getBody().getWorldCenter().y*map.getTileHeight());
+			this.drawSprite(g,building.getSprite(), x, y);
 		}
 	}
 	
 	protected void drawParralax(Graphics2D g, int offX, int offY) {
 		int sHeight = this.getHeight();
+		int sWidth = this.getWidth();
 		float scaledY = sHeight/2f/mapHeight;
-		g.drawImage(scrap1, offX, offY, (int)(scrap1.getWidth()*scaledY), (int)(scrap1.getHeight()*scaledY), null);
+		g.drawImage(scrap1, (int)(sWidth*Math.sin(-offX/(float)sWidth)), offY, (int)(scrap1.getWidth()*scaledY), (int)(scrap1.getHeight()*scaledY), null);
 	}
 	
 	protected void drawLoopMap(Graphics2D g, int offX, int offY){
@@ -104,6 +113,8 @@ public class GodPainter extends AbstractPainter{
 		g.setBackground(new Color(1,1,1,0));
 		g.clearRect(0, 0, mapWidth, mapHeight);
 		drawTiled(g, path, mapHeight-path.getHeight());
+		this.drawResources(g);
+		this.drawBuildings(g);
 		drawTiled(g, foreground, mapHeight-path.getHeight());
 		//this.drawSprite(g, mapMiddle, 0, 0);
 		g.dispose();
