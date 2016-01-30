@@ -12,24 +12,26 @@ public class GameModel extends Game {
 	private WorldMap worldMap;
 	private List<Player> playerList = new ArrayList<Player>();
 
-	public GameModel() {
+	public GameModel(int amountPlayers) {
 		MapFactory factory = new MapFactory();
 		Map map = factory.loadMap("data/maps/map0.tmx");
 		this.setMap(map);
 		
 		worldMap = new WorldMap(map.getGameObjectsWithProp("resource"));
-		addPlayers(map);
+		addPlayers(amountPlayers, map);
 	}
 	
-	private void addPlayers(Map map) {
-		for (GameObject player : map.getGameObjectsWithProp("player")) {
-			playerList.add((Player) player);
+	private void addPlayers(int amountPlayers, Map map) {
+		for (int i=0; i<amountPlayers; i++) {
+			playerList.add(new Player(i,map, new Cursor(map.getWidth())));
 		}
 	}
 	
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
+		for(Player player : playerList) {
+			player.update();
+		}
 	}	
 
 }
