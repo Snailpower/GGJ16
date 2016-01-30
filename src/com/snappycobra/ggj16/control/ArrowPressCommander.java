@@ -25,5 +25,13 @@ public class ArrowPressCommander extends CursorCommander{
 				getCursor().setMovingRight(true);
 			}
 		});
+		
+		this.addCommand(KeyEvent.VK_CONTROL, new AbstractAction() {
+			private static final long serialVersionUID = 331430491826847158L;
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				getCursor().select();
+			}
+		});
 	}
 }
