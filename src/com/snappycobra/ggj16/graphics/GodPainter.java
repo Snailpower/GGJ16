@@ -95,6 +95,7 @@ public class GodPainter extends AbstractPainter{
 				Sprite sprite = unit.getJob().getSprite();
 				int x = (int) (unit.getBody().getWorldCenter().x*map.getTileWidth());
 				int y = (int) (unit.getBody().getWorldCenter().y*map.getTileHeight());
+				System.out.println(Integer.toString(x)+"jo"+Integer.toString(y));
 				int width = sprite.getImage().getWidth();
 				int height = sprite.getImage().getHeight();
 				this.drawSprite(g, sprite, x-width/2, y-height);

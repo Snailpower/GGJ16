@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.geometry.Rectangle;
+
 import com.snappycobra.ggj16.control.ArrowCursorController;
 import com.snappycobra.ggj16.control.CursorController;
 import com.snappycobra.ggj16.control.WASDCursorController;
 import com.snappycobra.ggj16.graphics.GodPainter;
 import com.snappycobra.ggj16.model.Cursor;
 import com.snappycobra.ggj16.model.GameModel;
+import com.snappycobra.ggj16.model.JobLess;
 import com.snappycobra.ggj16.model.Player;
 import com.snappycobra.ggj16.model.Unit;
 import com.snappycobra.motor.demo.DemoGame;
@@ -23,17 +25,6 @@ public class Main {
 		GodPainter painter = new GodPainter(model);
 		Window window = new Window(300,300,painter);
 		List<Player> players = model.getPlayerList();
-		
-		Body unitBody = new Body();
-		unitBody.addFixture(new Rectangle(1,1));
-		Unit unit = new Unit("harry",unitBody,players.get(0));
-		players.get(0).addUnit(unit);
-		unit = new Unit("harry",unitBody,players.get(0));
-		players.get(0).addUnit(unit);
-		unit = new Unit("harry",unitBody,players.get(0));
-		players.get(0).addUnit(unit);
-		unit = new Unit("harry",unitBody,players.get(1));
-		players.get(1).addUnit(unit);
 
 		CursorController controller1 = new ArrowCursorController(players.get(0).getCursor());
 		CursorController controller2 = new WASDCursorController(players.get(1).getCursor());

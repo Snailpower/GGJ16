@@ -41,7 +41,6 @@ public class Unit extends GameObject{
 		if (job != null) {
 			job.update();
 		}
-		System.out.println("I don't have a Job");
 	}
 	
 	public void removeJob() {
@@ -59,7 +58,10 @@ public class Unit extends GameObject{
 	public Player getOwner() {
 		return owner;
 	}
-
+	
+	public void addJob(Job job) {
+		this.job = job;
+	}
 	public void switchJob(Gatherer gatherer) {
 		// TODO Auto-generated method stub
 		
