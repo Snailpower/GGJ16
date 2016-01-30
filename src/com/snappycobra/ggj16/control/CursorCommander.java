@@ -21,11 +21,27 @@ public class CursorCommander extends KeyCommander {
 			}
 		});
 		
+		this.addCommand(KeyEvent.VK_A, new AbstractAction() {
+			private static final long serialVersionUID = 331430491826847158L;
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				getCursor2().moveLeft();
+			}
+		});
+		
 		this.addCommand(KeyEvent.VK_RIGHT, new AbstractAction() {
 			private static final long serialVersionUID = 331430491826847158L;
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				getCursor1().moveRight();
+			}
+		});
+		
+		this.addCommand(KeyEvent.VK_D, new AbstractAction() {
+			private static final long serialVersionUID = 331430491826847158L;
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				getCursor2().moveRight();
 			}
 		});
 	}

@@ -4,11 +4,12 @@ public class Gatherer extends Job {
 	private ResourcePoint gatherAt;
 	private int yield;
 	private int maxYield;
-	private int state;
+	private int state=3;
 	private Unit owner;
 	
-	public Gatherer(Unit owner) {
+	public Gatherer(Unit owner, ResourcePoint gatherAt) {
 		this.owner = owner;
+		this.gatherAt = gatherAt;
 		yield = 0;
 		maxYield = 5;
 	}

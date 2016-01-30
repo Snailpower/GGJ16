@@ -6,7 +6,7 @@ import com.snappycobra.motor.maps.GameObject;
 
 public class Cursor {
 	private double position;
-	private double movementSpeed=1;
+	private static final double SPEED=0.5;
 	private double mapWidth;
 	private Player owner;
 	private WorldMap worldMap;
@@ -31,9 +31,19 @@ public class Cursor {
 	}
 	
 	public void doClicked(Unit unit) {
-		
+		selectedUnit = unit;
 	}
 	
+	public void doClicked(ResourcePoint rp) {
+		if (selectedUnit != null) {
+			selectedUnit.switchJob(new Gatherer(selectedUnit, rp));
+		}
+	}
+	
+	public void moveRight() {
+		moveCursor(-SPEED);
+	}
+
 	public GameObject select() {
 		for(ResourcePoint rp : worldMap.getResourcePointList()) {
 			if (inBoundaryBox(rp.getBody())) {
@@ -53,18 +63,14 @@ public class Cursor {
 	private boolean inBoundaryBox(Body body) {
 		return position > body.createAABB().getMinX() && position < body.createAABB().getMinX();
 	}
-	
-	public void moveRigth() {
-		moveCursor(movementSpeed);
-	}
+
 	
 	public void moveLeft() {
-		System.out.println("LEFT:"+this.position);
-		moveCursor(-movementSpeed);
+		moveCursor(SPEED);
 	}
 	
-	public void moveCursor(double movementSpeed2) {
-		position = (position+movementSpeed)%mapWidth;
+	public void moveCursor(double speed) {
+		position = (position+speed)%mapWidth;
 	}
 
 	public double getPosition() {

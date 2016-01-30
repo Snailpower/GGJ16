@@ -55,4 +55,9 @@ public class Unit extends GameObject{
 	public Player getOwner() {
 		return owner;
 	}
+
+	public void switchJob(Gatherer gatherer) {
+		// TODO Auto-generated method stub
+		
+	}
 }
