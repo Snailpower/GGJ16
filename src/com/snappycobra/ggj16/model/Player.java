@@ -15,8 +15,7 @@ public class Player{
 	private List<ResourceAmount> resourceList = new ArrayList<ResourceAmount>();
 	private Cursor cursor;
 	
-	public Player(int playerNumber, Map map, Cursor cursor) {
-		this.cursor = cursor;
+	public Player(int playerNumber, Map map) {
 		fillBuildingList(playerNumber, map);
 	}
 	
@@ -42,6 +41,10 @@ public class Player{
 		}
 	}
 
+	public void addCursor(Cursor cursor) {
+		this.cursor = cursor;
+	}
+	
 	public List<Unit> getUnitList() {
 		return unitList;
 	}

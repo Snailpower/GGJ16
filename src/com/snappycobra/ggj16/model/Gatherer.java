@@ -38,6 +38,7 @@ public class Gatherer extends Job {
 	
 	public void Work(){
 		System.out.println("working");
+		yield++;
 	}
 	
 	public void storeResources() {
