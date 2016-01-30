@@ -27,7 +27,6 @@ public class Sacrificer extends Job {
 			if(owner.moveTo(owner.getBase().getBody())) {
 				owner.removeJob();
 			}
-			
 		}
 	}
 	

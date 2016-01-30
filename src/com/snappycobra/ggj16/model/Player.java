@@ -29,4 +29,10 @@ public class Player extends GameObject{
 	public void init() {
 		resourceList.add(new ResourceAmount(Oil.getResName()));
 	}
+	
+	public void update() {
+		for(Unit unit : unitList) {
+			unit.update();
+		}
+	}
 }

@@ -29,7 +29,9 @@ public class GameModel extends Game {
 	
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
+		for(Player player : playerList) {
+			player.update();
+		}
 	}	
 
 }
