@@ -56,7 +56,6 @@ public class GodPainter extends AbstractPainter{
 		this.drawLoopMap(g, scroll1, 0);
 		this.drawParralax(g, scroll2/2, sHeight/2);
 		this.drawLoopMap(g, scroll2, sHeight/2);
-		this.drawResources(g);
 	}
 	
 	protected void drawResources(Graphics2D g) {
@@ -66,8 +65,6 @@ public class GodPainter extends AbstractPainter{
 			int x = (int) (point.getBody().getWorldCenter().x*map.getTileWidth());
 			int y = (int) (point.getBody().getWorldCenter().y*map.getTileHeight());
 			System.out.println(x+","+y);
-			Resource res = point.getResource();
-			res.toString();
 			this.drawSprite(g,point.getResource().getSprite(), x, y);
 		}
 	}
@@ -104,6 +101,7 @@ public class GodPainter extends AbstractPainter{
 		g.setBackground(new Color(1,1,1,0));
 		g.clearRect(0, 0, mapWidth, mapHeight);
 		drawTiled(g, path, mapHeight-path.getHeight());
+		this.drawResources(g);
 		drawTiled(g, foreground, mapHeight-path.getHeight());
 		//this.drawSprite(g, mapMiddle, 0, 0);
 		g.dispose();
