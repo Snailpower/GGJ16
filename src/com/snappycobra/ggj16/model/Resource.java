@@ -12,6 +12,15 @@ public abstract class Resource{
 		switch (resName) {
 		case "Oil":
 			return new Oil();
+			
+		case "Gear":
+			return new Gear();
+			
+		case "Uranium":
+			return new Uranium();
+			
+		case "Silverfish":
+			return new Silverfish();
 		}
 		return null;
 	}
