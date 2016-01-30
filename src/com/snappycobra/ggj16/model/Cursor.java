@@ -56,12 +56,12 @@ public class Cursor {
 	}
 
 	public GameObject select() {
-		/*for(ResourcePoint rp : worldMap.getResourcePointList()) {
+		for(ResourcePoint rp : worldMap.getResourcePointList()) {
 			if (inBoundaryBox(rp.getBody())) {
 				System.out.println("Resource Selected");
 				return rp;
 			}
-		}*/
+		}
 		for(Unit unit : owner.getUnitList()) {
 			if (inBoundaryBox(unit.getBody())) {
 				System.out.println("UNIT Selected");
