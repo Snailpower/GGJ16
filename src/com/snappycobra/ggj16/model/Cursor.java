@@ -21,4 +21,8 @@ public class Cursor {
 	public void moveCursor(double movementSpeed2) {
 		position = (position+movementSpeed)%mapWidth;
 	}
+
+	public double getPosition() {
+		return position;
+	}
 }

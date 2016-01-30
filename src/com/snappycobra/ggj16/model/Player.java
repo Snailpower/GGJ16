@@ -41,4 +41,16 @@ public class Player{
 			unit.update();
 		}
 	}
+
+	public List<Unit> getUnitList() {
+		return unitList;
+	}
+
+	public List<Building> getBuildingList() {
+		return buildingList;
+	}
+
+	public Cursor getCursor() {
+		return cursor;
+	}
 }

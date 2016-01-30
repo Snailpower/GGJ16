@@ -2,7 +2,6 @@ package com.snappycobra.ggj16;
 
 import com.snappycobra.ggj16.graphics.GodPainter;
 import com.snappycobra.ggj16.model.GameModel;
-import com.snappycobra.ggj16.model.GodGame;
 import com.snappycobra.motor.demo.DemoGame;
 import com.snappycobra.motor.demo.DemoPainter;
 import com.snappycobra.motor.demo.WindowCloseController;

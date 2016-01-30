@@ -8,8 +8,9 @@ import java.util.List;
 
 import com.snappycobra.ggj16.model.Base;
 import com.snappycobra.ggj16.model.Building;
+import com.snappycobra.ggj16.model.Cursor;
 import com.snappycobra.ggj16.model.GameModel;
-import com.snappycobra.ggj16.model.GodGame;
+import com.snappycobra.ggj16.model.Player;
 import com.snappycobra.ggj16.model.Resource;
 import com.snappycobra.ggj16.model.ResourcePoint;
 import com.snappycobra.motor.graphics.AbstractPainter;
@@ -23,6 +24,7 @@ import com.snappycobra.motor.maps.MapContainer;
 import com.snappycobra.motor.timing.Timer;
 
 public class GodPainter extends AbstractPainter{
+	private List<Player> players;
 	private int mapWidth, mapHeight;
 	private BufferedImage mapBuffer;
 	private BufferedImage air, path, foreground, scrap1, scrap2;
@@ -30,6 +32,7 @@ public class GodPainter extends AbstractPainter{
 	
 	public GodPainter(GameModel gameModel) {
 		super(gameModel);
+		this.players = gameModel.getPlayerList();
 		Map map = getMap();
 		this.mapWidth = map.getWidth()*map.getTileWidth();
 		this.mapHeight = map.getHeight()*map.getTileHeight();
@@ -47,18 +50,26 @@ public class GodPainter extends AbstractPainter{
 	@Override
 	protected void drawFrame(Graphics2D g) {
 		bufferMap();
+		scroll2 += 10;
+		this.drawScreens(g);
+	}
+	
+	protected void drawScreens(Graphics2D g) {
 		int sWidth = this.getWidth();
 		int sHeight = this.getHeight();
-		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, sWidth, sHeight);
-		scroll1 += Timer.getPassedTime()/Math.pow(10, 7);
-		scroll2 -= Timer.getPassedTime()/Math.pow(10, 7);
-		g.drawImage(air, 0, 0, (int)(air.getWidth()), (int)(air.getHeight()), null);
-		float scaledY = sHeight/2f/mapHeight;
-		this.drawParralax(g, scroll1/2, 0);
-		this.drawLoopMap(g, scroll1, 0);
-		this.drawParralax(g, scroll2/2, sHeight/2);
-		this.drawLoopMap(g, scroll2, sHeight/2);
+		int numPlayers = players.size();
+		float scaledY = sHeight/(1f*numPlayers)/mapHeight;
+		
+		int i=0;
+		for (Player player : players) {
+			Cursor cursor = player.getCursor();
+			int posX = (int) (cursor.getPosition()*getMap().getTileWidth());
+			this.drawTiled(g, air, i*(sHeight/numPlayers));
+			//g.drawImage(air, 0, i*(sHeight/numPlayers), (int)(air.getWidth()*scaledY), (int)(air.getHeight()*scaledY), null);
+			this.drawParralax(g, posX/2, i*(sHeight/numPlayers));
+			this.drawLoopMap(g, posX, i*(sHeight/numPlayers));
+			i++;
+		}
 	}
 	
 	protected void drawResources(Graphics2D g) {
@@ -76,14 +87,16 @@ public class GodPainter extends AbstractPainter{
 	
 	protected void drawBuildings(Graphics2D g) {
 		Map map = this.getMap();
-		List<Base> buildings = new GameObjectGrabber<Base>().getObjects(map, Base.class);
-		for (Building building : buildings) {
-			int x = (int) (building.getBody().getWorldCenter().x*map.getTileWidth());
-			int y = (int) (building.getBody().getWorldCenter().y*map.getTileHeight());
-			Sprite sprite = building.getSprite();
-			int width = sprite.getImage().getWidth();
-			int height = sprite.getImage().getHeight();
-			this.drawSprite(g,sprite, x-width/2, y-height);
+		for (Player player : players) {
+			List<Building> buildings = player.getBuildingList();
+			for (Building building : buildings) {
+				int x = (int) (building.getBody().getWorldCenter().x*map.getTileWidth());
+				int y = (int) (building.getBody().getWorldCenter().y*map.getTileHeight());
+				Sprite sprite = building.getSprite();
+				int width = sprite.getImage().getWidth();
+				int height = sprite.getImage().getHeight();
+				this.drawSprite(g,sprite, x-width/2, y-height);
+			}
 		}
 	}
 	
