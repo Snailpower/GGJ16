@@ -19,8 +19,11 @@ public abstract class Resource{
 		case "Uranium":
 			return new Uranium();
 			
-		case "Silverfish":
+		case "Silver":
 			return new Silverfish();
+		default:
+			System.out.println("Not recognized:"+resName);
+			break;
 		}
 		return null;
 	}

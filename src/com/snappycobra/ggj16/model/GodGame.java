@@ -8,7 +8,7 @@ public class GodGame extends Game{
 
 	public GodGame() {
 		MapFactory factory = new MapFactory();
-		Map map = factory.loadMap("data/maps/test2.tmx");
+		Map map = factory.loadMap("data/maps/test.tmx");
 		this.setMap(map);
 	}
 	
