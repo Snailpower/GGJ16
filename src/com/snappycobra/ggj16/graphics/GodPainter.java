@@ -32,7 +32,7 @@ public class GodPainter extends AbstractPainter{
 	private List<Player> players;
 	private int mapWidth, mapHeight;
 	private BufferedImage mapBuffer;
-	private BufferedImage air, path, foreground, scrap1, scrap2;
+	private BufferedImage air, path, foreground, scrap1, scrap2, shrine;
 	private int scroll1, scroll2;
 	
 	public GodPainter(GameModel gameModel) {
@@ -47,6 +47,7 @@ public class GodPainter extends AbstractPainter{
 		this.foreground = ImageManager.getImage("data/images/voorgrond.png");
 		this.scrap1 = ImageManager.getImage("data/images/background_Scrap1.png");
 		this.scrap2 = ImageManager.getImage("data/images/background_Scrap2.png");
+		this.shrine = ImageManager.getImage("data/images/Hud_Sacrifice.png");
 		
 		this.scroll1=0;
 		this.scroll2=0;
