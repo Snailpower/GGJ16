@@ -10,11 +10,9 @@ public class Building  extends GameObject{
 		super(name, body);
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
-
 }

@@ -6,6 +6,7 @@ import com.snappycobra.motor.maps.GameObject;
 
 public class ResourcePoint extends GameObject {
 	private int yield;
+	private Resource resource;
 	
 	public ResourcePoint(String name, Body body) {
 		super(name, body);
@@ -14,10 +15,12 @@ public class ResourcePoint extends GameObject {
 
 	@Override
 	public void init() {
-		if (this.getPropertySet().hasProperty("amount")){
-			yield = Integer.parseInt(this.getPropertySet().getProperty("amount"));
-		} else {
-			yield = 5000000;
+		if (this.getPropertySet().hasProperty("type")){
+			resource = Resource.getResource(this.getPropertySet().getProperty("type"));
 		}
+	}
+	
+	public Resource getResource() {
+		return resource;
 	}
 }
