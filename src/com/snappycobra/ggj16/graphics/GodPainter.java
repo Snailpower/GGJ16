@@ -66,7 +66,10 @@ public class GodPainter extends AbstractPainter{
 		for (ResourcePoint point : points) {
 			int x = (int) (point.getBody().getWorldCenter().x*map.getTileWidth());
 			int y = (int) (point.getBody().getWorldCenter().y*map.getTileHeight());
-			this.drawSprite(g,point.getResource().getSprite(), x, y);
+			Sprite sprite = point.getResource().getSprite();
+			int width = sprite.getImage().getWidth();
+			int height = sprite.getImage().getHeight();
+			this.drawSprite(g,sprite, x-width/2, y-height);
 		}
 	}
 	
@@ -76,7 +79,10 @@ public class GodPainter extends AbstractPainter{
 		for (Building building : buildings) {
 			int x = (int) (building.getBody().getWorldCenter().x*map.getTileWidth());
 			int y = (int) (building.getBody().getWorldCenter().y*map.getTileHeight());
-			this.drawSprite(g,building.getSprite(), x, y);
+			Sprite sprite = building.getSprite();
+			int width = sprite.getImage().getWidth();
+			int height = sprite.getImage().getHeight();
+			this.drawSprite(g,sprite, x-width/2, y-height);
 		}
 	}
 	
