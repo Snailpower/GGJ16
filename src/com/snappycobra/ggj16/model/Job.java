@@ -1,5 +1,6 @@
 package com.snappycobra.ggj16.model;
 
+import com.snappycobra.motor.graphics.Frame;
 import com.snappycobra.motor.graphics.Sprite;
 
 public abstract class Job {

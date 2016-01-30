@@ -13,4 +13,8 @@ public class WorldMap {
 			resourcePointList.add((ResourcePoint) res);
 		}
 	}
+	
+	public List<ResourcePoint> getResourcePointList() {
+		return resourcePointList;
+	}
 }

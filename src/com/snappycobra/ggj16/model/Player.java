@@ -57,4 +57,8 @@ public class Player{
 	public Cursor getCursor() {
 		return cursor;
 	}
+	
+	public void addUnit(Unit unit) {
+		unitList.add(unit);
+	}
 }
