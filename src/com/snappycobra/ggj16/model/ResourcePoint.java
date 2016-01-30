@@ -20,6 +20,13 @@ public class ResourcePoint extends GameObject {
 		}
 	}
 	
+	public void roudUp() {
+		if (this.getPropertySet().hasProperty("worldMap")) {
+			
+			this.getPropertySet().getProperty("worldMap");
+		}
+	}
+	
 	public Resource getResource() {
 		return resource;
 	}
