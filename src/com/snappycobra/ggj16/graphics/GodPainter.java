@@ -87,7 +87,7 @@ public class GodPainter extends AbstractPainter{
 			Sprite sprite = point.getResource().getSprite();
 			int width = sprite.getImage().getWidth();
 			int height = sprite.getImage().getHeight();
-			this.drawSprite(g,sprite, x-width/2, y-height);
+			this.drawSprite(g,sprite, x, y-height);
 		}
 	}
 	
@@ -101,7 +101,7 @@ public class GodPainter extends AbstractPainter{
 
 				int width = sprite.getImage().getWidth();
 				int height = sprite.getImage().getHeight();
-				this.drawSprite(g, sprite, x-width/2, y-height);
+				this.drawSprite(g, sprite, x, y-height);
 			}
 		}
 	}
@@ -116,7 +116,7 @@ public class GodPainter extends AbstractPainter{
 				Sprite sprite = building.getSprite();
 				int width = sprite.getImage().getWidth();
 				int height = sprite.getImage().getHeight();
-				this.drawSprite(g,sprite, x-width/2, y-height);
+				this.drawSprite(g,sprite, x, y-height);
 			}
 		}
 	}
