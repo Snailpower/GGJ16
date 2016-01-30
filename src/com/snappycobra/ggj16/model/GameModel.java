@@ -17,7 +17,7 @@ public class GameModel extends Game {
 		Map map = factory.loadMap("data/maps/test.tmx");
 		this.setMap(map);
 		
-		worldMap = new WorldMap(map.getGameObjectsWithProp("resource"));
+		worldMap = new WorldMap(map.getGameObjectsWithProp("Resource"));
 		addPlayers(amountPlayers, map);
 	}
 	
