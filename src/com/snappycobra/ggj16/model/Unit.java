@@ -38,7 +38,14 @@ public class Unit extends GameObject{
 	}
 	
 	public void update(){
-		job.update();
+		if (job != null) {
+			job.update();
+		}
+		System.out.println("I don't have a Job");
+	}
+	
+	public void removeJob() {
+		job = null;
 	}
 	
 	public Base getBase() {
