@@ -6,6 +6,7 @@ import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
+import com.snappycobra.ggj16.model.Building;
 import com.snappycobra.ggj16.model.GodGame;
 import com.snappycobra.ggj16.model.Resource;
 import com.snappycobra.ggj16.model.ResourcePoint;
@@ -65,6 +66,16 @@ public class GodPainter extends AbstractPainter{
 			int x = (int) (point.getBody().getWorldCenter().x*map.getTileWidth());
 			int y = (int) (point.getBody().getWorldCenter().y*map.getTileHeight());
 			this.drawSprite(g,point.getResource().getSprite(), x, y);
+		}
+	}
+	
+	protected void drawBuildings(Graphics2D g) {
+		Map map = this.getMap();
+		List<Building> buildings = new GameObjectGrabber<Building>().getObjects(map, Building.class);
+		for (Building building : buildings) {
+			int x = (int) (building.getBody().getWorldCenter().x*map.getTileWidth());
+			int y = (int) (building.getBody().getWorldCenter().y*map.getTileHeight());
+			//this.drawSprite(g,poin.getResource().getSprite(), x, y);
 		}
 	}
 	
