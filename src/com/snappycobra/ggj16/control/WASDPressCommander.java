@@ -31,7 +31,7 @@ public class WASDPressCommander extends CursorCommander{
 			private static final long serialVersionUID = 331430491826847158L;
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				getCursor().select();
+				getCursor().click();
 			}
 		});
 	}
