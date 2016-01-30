@@ -13,7 +13,7 @@ public class Cursor {
 	private WorldMap worldMap;
 	private Unit selectedUnit;
 	
-	public Cursor(double mapWidth, Player player, WorldMap worldmap) {
+	public Cursor(double mapWidth, Player player, WorldMap worldMap) {
 		this.owner = player;
 		this.worldMap = worldMap;
 		this.mapWidth = mapWidth;
