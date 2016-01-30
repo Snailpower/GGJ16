@@ -25,10 +25,15 @@ public class Cursor {
 	}
 	
 	public void moveLeft() {
+		System.out.println("LEFT:"+this.position);
 		moveCursor(-movementSpeed);
 	}
 	
 	public void moveCursor(double movementSpeed2) {
 		position = (position+movementSpeed)%mapWidth;
+	}
+
+	public double getPosition() {
+		return position;
 	}
 }

@@ -41,12 +41,12 @@
     <property name="resource" value="Silver"/>
    </properties>
   </object>
-  <object name="Building" type="com.snappycobra.ggj16.model.Base" x="1397" y="771" width="224" height="232">
+  <object name="Building" type="com.snappycobra.ggj16.model.Base" x="1321" y="750" width="224" height="232">
    <properties>
     <property name="Player" value="0"/>
    </properties>
   </object>
-  <object name="Building" type="com.snappycobra.ggj16.model.Base" x="2303" y="765" width="224" height="232">
+  <object name="Building" type="com.snappycobra.ggj16.model.Base" x="2355" y="728" width="224" height="232">
    <properties>
     <property name="Player" value="1"/>
    </properties>

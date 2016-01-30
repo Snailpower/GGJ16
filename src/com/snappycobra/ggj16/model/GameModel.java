@@ -34,6 +34,10 @@ public class GameModel extends Game {
 		for(Player player : playerList) {
 			player.update();
 		}
+	}
+
+	public List<Player> getPlayerList() {
+		return playerList;
 	}	
 	
 }

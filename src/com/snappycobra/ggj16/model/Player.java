@@ -44,4 +44,16 @@ public class Player{
 	public void addCursor(Cursor cursor) {
 		this.cursor = cursor;
 	}
+	
+	public List<Unit> getUnitList() {
+		return unitList;
+	}
+
+	public List<Building> getBuildingList() {
+		return buildingList;
+	}
+
+	public Cursor getCursor() {
+		return cursor;
+	}
 }
