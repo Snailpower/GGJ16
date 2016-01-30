@@ -15,8 +15,8 @@ public class ResourcePoint extends GameObject {
 
 	@Override
 	public void init() {
-		if (this.getPropertySet().hasProperty("type")){
-			resource = Resource.getResource(this.getPropertySet().getProperty("type"));
+		if (this.getPropertySet().hasProperty("resource")){
+			resource = Resource.getResource(this.getPropertySet().getProperty("resource"));
 		}
 	}
 	
