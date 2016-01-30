@@ -64,15 +64,15 @@ public class GodPainter extends AbstractPainter{
 		for (ResourcePoint point : points) {
 			int x = (int) (point.getBody().getWorldCenter().x*map.getTileWidth());
 			int y = (int) (point.getBody().getWorldCenter().y*map.getTileHeight());
-			System.out.println(x+","+y);
 			this.drawSprite(g,point.getResource().getSprite(), x, y);
 		}
 	}
 	
 	protected void drawParralax(Graphics2D g, int offX, int offY) {
 		int sHeight = this.getHeight();
+		int sWidth = this.getWidth();
 		float scaledY = sHeight/2f/mapHeight;
-		g.drawImage(scrap1, offX, offY, (int)(scrap1.getWidth()*scaledY), (int)(scrap1.getHeight()*scaledY), null);
+		g.drawImage(scrap1, (int)(sWidth*Math.sin(-offX/(float)sWidth)), offY, (int)(scrap1.getWidth()*scaledY), (int)(scrap1.getHeight()*scaledY), null);
 	}
 	
 	protected void drawLoopMap(Graphics2D g, int offX, int offY){
