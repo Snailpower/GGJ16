@@ -13,6 +13,7 @@ import com.snappycobra.ggj16.model.GameModel;
 import com.snappycobra.ggj16.model.Player;
 import com.snappycobra.ggj16.model.Resource;
 import com.snappycobra.ggj16.model.ResourcePoint;
+import com.snappycobra.ggj16.model.Unit;
 import com.snappycobra.motor.graphics.AbstractPainter;
 import com.snappycobra.motor.graphics.Frame;
 import com.snappycobra.motor.graphics.ImageManager;
@@ -67,6 +68,7 @@ public class GodPainter extends AbstractPainter{
 			//System.out.println(posX);
 			this.drawTiled(g, air, i*(sHeight/numPlayers));
 			//g.drawImage(air, 0, i*(sHeight/numPlayers), (int)(air.getWidth()*scaledY), (int)(air.getHeight()*scaledY), null);
+			//g.drawImage(air, (int)(air.getWidth()*scaledY), i*(sHeight/numPlayers), (int)(air.getWidth()*scaledY), (int)(air.getHeight()*scaledY), null);
 			this.drawParralax(g, posX/2, i*(sHeight/numPlayers));
 			this.drawLoopMap(g, posX, i*(sHeight/numPlayers));
 			i++;
@@ -83,6 +85,20 @@ public class GodPainter extends AbstractPainter{
 			int width = sprite.getImage().getWidth();
 			int height = sprite.getImage().getHeight();
 			this.drawSprite(g,sprite, x-width/2, y-height);
+		}
+	}
+	
+	protected void drawUnits(Graphics2D g) {
+		Map map = this.getMap();
+		for (Player player : players) {
+			for (Unit unit : player.getUnitList()) {
+				Sprite sprite = unit.getJob().getSprite();
+				int x = (int) (unit.getBody().getWorldCenter().x*map.getTileWidth());
+				int y = (int) (unit.getBody().getWorldCenter().y*map.getTileHeight());
+				int width = sprite.getImage().getWidth();
+				int height = sprite.getImage().getHeight();
+				this.drawSprite(g, sprite, x-width/2, y-height);
+			}
 		}
 	}
 	
@@ -136,6 +152,7 @@ public class GodPainter extends AbstractPainter{
 		drawTiled(g, path, mapHeight-path.getHeight());
 		this.drawResources(g);
 		this.drawBuildings(g);
+		this.drawUnits(g);
 		drawTiled(g, foreground, mapHeight-path.getHeight());
 		//this.drawSprite(g, mapMiddle, 0, 0);
 		g.dispose();

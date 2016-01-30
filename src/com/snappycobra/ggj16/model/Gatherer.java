@@ -1,5 +1,8 @@
 package com.snappycobra.ggj16.model;
 
+import com.snappycobra.motor.graphics.Frame;
+import com.snappycobra.motor.graphics.Sprite;
+
 public class Gatherer extends Job {
 	private ResourcePoint gatherAt;
 	private int yield;
@@ -9,6 +12,7 @@ public class Gatherer extends Job {
 	
 	public Gatherer(Unit owner) {
 		this.owner = owner;
+		this.sprite = new Sprite(new Frame("data/images/Workers/Worker_Blue.png", 10));
 		yield = 0;
 		maxYield = 5;
 	}

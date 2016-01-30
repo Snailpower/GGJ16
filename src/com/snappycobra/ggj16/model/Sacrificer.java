@@ -1,5 +1,8 @@
 package com.snappycobra.ggj16.model;
 
+import com.snappycobra.motor.graphics.Frame;
+import com.snappycobra.motor.graphics.Sprite;
+
 public class Sacrificer extends Job {
 	private Shrine shrine;
 	private int state;
@@ -7,6 +10,7 @@ public class Sacrificer extends Job {
 	private ResourceAmount resourceAmount;
 	
 	public Sacrificer(Unit owner, Shrine shrine, ResourceAmount res) {
+		this.sprite = new Sprite(new Frame("data/images/Workers/Worker_Red.png", 10));
 		this.owner = owner;
 		this.shrine = shrine;
 		this.state = 1;

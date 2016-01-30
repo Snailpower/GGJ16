@@ -2,7 +2,9 @@ package com.snappycobra.ggj16;
 
 import java.util.List;
 
+import com.snappycobra.ggj16.control.ArrowCursorController;
 import com.snappycobra.ggj16.control.CursorController;
+import com.snappycobra.ggj16.control.WASDCursorController;
 import com.snappycobra.ggj16.graphics.GodPainter;
 import com.snappycobra.ggj16.model.Cursor;
 import com.snappycobra.ggj16.model.GameModel;
@@ -18,8 +20,10 @@ public class Main {
 		GodPainter painter = new GodPainter(model);
 		Window window = new Window(300,300,painter);
 		List<Player> players = model.getPlayerList();
-		CursorController controller = new CursorController(players.get(0).getCursor(), players.get(1).getCursor());
-		window.addKeyListener(controller);
+		CursorController controller1 = new ArrowCursorController(players.get(0).getCursor());
+		CursorController controller2 = new WASDCursorController(players.get(1).getCursor());
+		window.addKeyListener(controller1);
+		window.addKeyListener(controller2);
 		window.addKeyListener(new WindowCloseController());
 		window.setResizable(true);
 		painter.showFPS(true);
