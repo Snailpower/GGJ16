@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 
 import com.snappycobra.ggj16.model.GodGame;
+import com.snappycobra.ggj16.model.Resource;
 import com.snappycobra.ggj16.model.ResourcePoint;
 import com.snappycobra.motor.graphics.AbstractPainter;
 import com.snappycobra.motor.graphics.Frame;
@@ -60,13 +61,14 @@ public class GodPainter extends AbstractPainter{
 	
 	protected void drawResources(Graphics2D g) {
 		Map map = this.getMap();
-		List<ResourcePoint> resources = new GameObjectGrabber<ResourcePoint>().getObjects(map, ResourcePoint.class);
-		System.out.println("size:"+resources.size());
-		for (ResourcePoint resource : resources) {
-			int x = (int) (resource.getBody().getWorldCenter().x*map.getTileWidth());
-			int y = (int) (resource.getBody().getWorldCenter().y*map.getTileHeight());
+		List<ResourcePoint> points = new GameObjectGrabber<ResourcePoint>().getObjects(map, ResourcePoint.class);
+		for (ResourcePoint point : points) {
+			int x = (int) (point.getBody().getWorldCenter().x*map.getTileWidth());
+			int y = (int) (point.getBody().getWorldCenter().y*map.getTileHeight());
 			System.out.println(x+","+y);
-			this.drawSprite(g,resource.getResource().getSprite(), x, y);
+			Resource res = point.getResource();
+			res.toString();
+			this.drawSprite(g,point.getResource().getSprite(), x, y);
 		}
 	}
 	
