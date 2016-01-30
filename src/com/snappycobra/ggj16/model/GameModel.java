@@ -25,20 +25,20 @@ public class GameModel extends Game {
 		addPlayers(amountPlayers, map, worldMap);
 		
 		Body unitBody = new Body();
-		unitBody.shift(new Vector2(3,7));
+		unitBody.shift(new Vector2(3,30));
 		unitBody.addFixture(new Rectangle(1,1));
 		Unit unit = new Unit("harry",unitBody,playerList.get(0));
 		unit.addJob(new JobLess());
 		playerList.get(0).addUnit(unit);
-		/*unit = new Unit("harry",unitBody,players.get(0));
+		unit = new Unit("harry",unitBody,playerList.get(0));
 		unit.addJob(new JobLess());
-		players.get(0).addUnit(unit);
-		unit = new Unit("harry",unitBody,players.get(0));
+		playerList.get(0).addUnit(unit);
+		unit = new Unit("harry",unitBody,playerList.get(0));
 		unit.addJob(new JobLess());
-		players.get(0).addUnit(unit);
-		unit = new Unit("harry",unitBody,players.get(1));
+		playerList.get(0).addUnit(unit);
+		unit = new Unit("harry",unitBody,playerList.get(1));
 		unit.addJob(new JobLess());
-		players.get(1).addUnit(unit);*/
+		playerList.get(1).addUnit(unit);
 	}
 	
 	private void addPlayers(int amountPlayers, Map map, WorldMap worldMap) {
