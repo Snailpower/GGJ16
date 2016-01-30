@@ -56,12 +56,12 @@ public class Cursor {
 	}
 
 	public GameObject select() {
-		for(ResourcePoint rp : worldMap.getResourcePointList()) {
+		/*for(ResourcePoint rp : worldMap.getResourcePointList()) {
 			if (inBoundaryBox(rp.getBody())) {
 				System.out.println("Resource Selected");
 				return rp;
 			}
-		}
+		}*/
 		for(Unit unit : owner.getUnitList()) {
 			if (inBoundaryBox(unit.getBody())) {
 				System.out.println("UNIT Selected");
@@ -72,7 +72,9 @@ public class Cursor {
 	}
 	
 	private boolean inBoundaryBox(Body body) {
-		return position > body.createAABB().getMinX() && position < body.createAABB().getMinX();
+		System.out.println("pos:"+position);
+		System.out.println("minx:"+body.createAABB().getMinX()+ "maxX"+body.createAABB().getMaxX());
+		return position > body.createAABB().getMinX() && position < body.createAABB().getMaxX();
 	}
 
 	
@@ -81,6 +83,9 @@ public class Cursor {
 	}
 	
 	public void moveCursor(double speed) {
+		if (position < 0) {
+			position +=mapWidth;
+		}
 		position = (position+speed)%mapWidth;
 	}
 
